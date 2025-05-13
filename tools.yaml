@@ -1,13 +1,13 @@
 sources:
     alloydb-orders:
         kind: "alloydb-postgres"
-        project: "abis-345004"
+        project: "<<YOUR_PROJECT_ID>>"
         region: "us-central1"
-        cluster: "vector-cluster"
-        instance: "vector-instance"
-        database: "postgres"
-        user: "postgres"
-        password: "alloydb"
+        cluster: "<<YOUR_ALLOYDB_CLUSTER>>"
+        instance: "<<YOUR_ALLOYDB_INSTANCE>>"
+        database: "<<YOUR_ALLOYDB_DATABASE>>"
+        user: "<<YOUR_ALLOYDB_USER>>"
+        password: "<<YOUR_ALLOYDB_PASSWORD>>"
 
 
 tools:
