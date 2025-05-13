@@ -4,8 +4,8 @@ This is the Multi-agent Renovation Application we built earlier using ADK but mo
 # Please make sure to clone the repo adk-renovation-agent:
 https://github.com/AbiramiSukumaran/adk-renovation-agent
 
-# Make the changes to the files below:
-requirement.txt
+# Make the changes to the files below by copying the code from these files in this repo:
+requirements.txt
 agent.py
 
 # Include tools.yaml and update your parameters accordingly
