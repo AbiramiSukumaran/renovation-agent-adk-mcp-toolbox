@@ -39,7 +39,7 @@ STORAGE_BUCKET = os.environ["STORAGE_BUCKET"]
 GOOGLE_CLOUD_PROJECT = os.environ["GOOGLE_CLOUD_PROJECT"]
 GOOGLE_CLOUD_LOCATION = os.environ["GOOGLE_CLOUD_LOCATION"]
 GOOGLE_GENAI_USE_VERTEXAI=os.environ["GOOGLE_GENAI_USE_VERTEXAI"]
-CHECK_ORDER_STATUS_ENDPOINT = os.environ["CHECK_ORDER_STATUS_ENDPOINT"]
+# CHECK_ORDER_STATUS_ENDPOINT = os.environ["CHECK_ORDER_STATUS_ENDPOINT"]
 STAGING_BUCKET = "gs://" + STORAGE_BUCKET
 ROOT_AGENT_NAME = "adk_renovation_agent"
 PROJECT_ID = GOOGLE_CLOUD_PROJECT
@@ -87,7 +87,7 @@ def get_ordering_data(tool_context: ToolContext) -> str:
 
 
 
-
+'''
 # check status
 def check_status(tool_context: ToolContext) -> list:
     if not tool_context :
@@ -105,7 +105,7 @@ def check_status(tool_context: ToolContext) -> list:
     except json.JSONDecodeError as e:
         print(f"Error decoding JSON response: {e}")
         return []
-
+'''
 
 
 
@@ -566,7 +566,7 @@ permits_agent = Agent(
 
 '''
 # Ordering Agent Definition
-'''
+
 ordering_agent = Agent(
    model=MODEL_NAME,
    name="ordering_agent",
@@ -588,7 +588,7 @@ ordering_agent = Agent(
        check_status
    ],
 )
-
+'''
 
 
 '''
@@ -610,11 +610,8 @@ root_agent = Agent(
       invoke the proposal_agent
     - If the user wants to create a checklist of permits or 
     compliance documentation, invoke the permits_agent.
-    - If the user wants to execute ordering of materials,
-    place order or get the status of delivery, 
-    invoke the ordering_agent without asking more questions.
     - If the user wants to know the status of order of a SPECIFIC MATERIAL or ITEM,
-    then do not invoke the ordering_agent, instead directly use the tool "get_order_status_by_name"
+    then directly use the tool "get_order_status_by_name"
     to get the status of the object by contextually extracting the name of the material 
     from the user's input text. Remember the material name is used in direct comparison 
     in the database against the material_name field so make sure you extract the name 
