@@ -14,3 +14,4 @@ google-cloud-aiplatform[adk,agent_engines]
 google-auth
 google-cloud-storage
 mcp
+deprecated
