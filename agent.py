@@ -27,7 +27,7 @@ SESSION_ID = "demo"
 PROPOSAL_DOCUMENT_FILE_NAME =  "proposal_document_for_user.pdf"
 MODEL_NAME = "gemini-2.0-flash"
 from fastapi import HTTPException
-toolbox = ToolboxSyncClient("https://toolbox-225312709728.us-central1.run.app")
+toolbox = ToolboxSyncClient("YOUR_TOOLBOX_ENDPOINT")
 get_order_status_by_name = toolbox.load_tool('get-order-data')
 
 
